@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANÜ YBST - Geleceğin Liderlerini Yetiştiren Topluluk</title>
+    <style>
+      :root {
+        /* Primitive Color Tokens */
+        --color-white: rgba(255, 255, 255, 1);
+        --color-black: rgba(0, 0, 0, 1);
+        --color-cream-50: rgba(252, 252, 249, 1);
+        --color-cream-100: rgba(255, 255, 253, 1);
+        --color-gray-200: rgba(245, 245, 245, 1);
+        --color-gray-300: rgba(167, 169, 169, 1);
+        --color-gray-400: rgba(119, 124, 124, 1);
+        --color-slate-500: rgba(98, 108, 113, 1);
+        --color-brown-600: rgba(94, 82, 64, 1);
+        --color-charcoal-700: rgba(31, 33, 33, 1);
+        --color-charcoal-800: rgba(38, 40, 40, 1);
+        --color-slate-900: rgba(19, 52, 59, 1);
+        --color-teal-300: rgba(50, 184, 198, 1);
+        --color-teal-400: rgba(45, 166, 178, 1);
+        --color-teal-500: rgba(33, 128, 141, 1);
+        --color-teal-600: rgba(29, 116, 128, 1);
+        --color-teal-700: rgba(26, 104, 115, 1);
+        --color-teal-800: rgba(41, 150, 161, 1);
+        --color-red-400: rgba(255, 84, 89, 1);
+        --color-red-500: rgba(192, 21, 47, 1);
+        --color-orange-400: rgba(230, 129, 97, 1);
+        --color-orange-500: rgba(168, 75, 47, 1);
+
+        /* RGB versions for opacity control */
+        --color-brown-600-rgb: 94, 82, 64;
+        --color-teal-500-rgb: 33, 128, 141;
+        --color-slate-900-rgb: 19, 52, 59;
+        --color-slate-500-rgb: 98, 108, 113;
+        --color-red-500-rgb: 192, 21, 47;
+        --color-red-400-rgb: 255, 84, 89;
+        --color-orange-500-rgb: 168, 75, 47;
+        --color-orange-400-rgb: 230, 129, 97;
+
+        /* Background color tokens (Light Mode) */
+        --color-bg-1: rgba(59, 130, 246, 0.08); /* Light blue */
+        --color-bg-2: rgba(245, 158, 11, 0.08); /* Light yellow */
+        --color-bg-3: rgba(34, 197, 94, 0.08); /* Light green */
+        --color-bg-4: rgba(239, 68, 68, 0.08); /* Light red */
+        --color-bg-5: rgba(147, 51, 234, 0.08); /* Light purple */
+        --color-bg-6: rgba(249, 115, 22, 0.08); /* Light orange */
+        --color-bg-7: rgba(236, 72, 153, 0.08); /* Light pink */
+        --color-bg-8: rgba(6, 182, 212, 0.08); /* Light cyan */
+
+        /* Semantic Color Tokens (Light Mode) */
+        --color-background: var(--color-cream-50);
+        --color-surface: var(--color-cream-100);
+        --color-text: var(--color-black); /* DEĞİŞTİRİLDİ: Metin rengi siyah yapıldı */
+        --color-text-secondary: var(--color-slate-500);
+        --color-primary: var(--color-teal-500);
+        --color-primary-hover: var(--color-teal-600);
+        --color-primary-active: var(--color-teal-700);
+        --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+        --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+        --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+        --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+        --color-btn-primary-text: var(--color-cream-50);
+        --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+        --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+        --color-error: var(--color-red-500);
+        --color-success: var(--color-teal-500);
+        --color-warning: var(--color-orange-500);
+        --color-info: var(--color-slate-500);
+        --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+        --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+
+        /* Common style patterns */
+        --focus-ring: 0 0 0 3px var(--color-focus-ring);
+        --focus-outline: 2px solid var(--color-primary);
+        --status-bg-opacity: 0.15;
+        --status-border-opacity: 0.25;
+        --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+        /* RGB versions for opacity control */
+        --color-success-rgb: 33, 128, 141;
+        --color-error-rgb: 192, 21, 47;
+        --color-warning-rgb: 168, 75, 47;
+        --color-info-rgb: 98, 108, 113;
+
+        /* Typography */
+        --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        --font-family-serif: Georgia, 'Times New Roman', Times, serif;
+        --font-family-mono: "Courier New", Courier, monospace;
+        --font-size-xs: 11px;
+        --font-size-sm: 12px;
+        --font-size-base: 14px;
+        --font-size-md: 14px;
+        --font-size-lg: 16px;
+        --font-size-xl: 18px;
+        --font-size-2xl: 20px;
+        --font-size-3xl: 24px;
+        --font-size-4xl: 30px;
+        --font-weight-normal: 400;
+        --font-weight-medium: 500;
+        --font-weight-semibold: 550;
+        --font-weight-bold: 600;
+        --line-height-tight: 1.2;
+        --line-height-normal: 1.5;
+        --letter-spacing-tight: -0.01em;
+
+        /* Spacing */
+        --space-0: 0;
+        --space-1: 1px;
+        --space-2: 2px;
+        --space-4: 4px;
+        --space-6: 6px;
+        --space-8: 8px;
+        --space-10: 10px;
+        --space-12: 12px;
+        --space-16: 16px;
+        --space-20: 20px;
+        --space-24: 24px;
+        --space-32: 32px;
+
+        /* Border Radius */
+        --radius-sm: 6px;
+        --radius-base: 8px;
+        --radius-md: 10px;
+        --radius-lg: 12px;
+        --radius-full: 9999px;
+
+        /* Shadows */
+        --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
+          0 2px 4px -1px rgba(0, 0, 0, 0.02);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04),
+          0 4px 6px -2px rgba(0, 0, 0, 0.02);
+        --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+
+        /* Animation */
+        --duration-fast: 150ms;
+        --duration-normal: 250ms;
+        --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+
+        /* Layout */
+        --container-sm: 640px;
+        --container-md: 768px;
+        --container-lg: 1024px;
+        --container-xl: 1280px;
+      }
+
+      /* Dark mode colors */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          /* RGB versions for opacity control (Dark Mode) */
+          --color-gray-400-rgb: 119, 124, 124;
+          --color-teal-300-rgb: 50, 184, 198;
+          --color-gray-300-rgb: 167, 169, 169;
+          --color-gray-200-rgb: 245, 245, 245;
+
+          /* Background color tokens (Dark Mode) */
+          --color-bg-1: rgba(29, 78, 216, 0.15); /* Dark blue */
+          --color-bg-2: rgba(180, 83, 9, 0.15); /* Dark yellow */
+          --color-bg-3: rgba(21, 128, 61, 0.15); /* Dark green */
+          --color-bg-4: rgba(185, 28, 28, 0.15); /* Dark red */
+          --color-bg-5: rgba(107, 33, 168, 0.15); /* Dark purple */
+          --color-bg-6: rgba(194, 65, 12, 0.15); /* Dark orange */
+          --color-bg-7: rgba(190, 24, 93, 0.15); /* Dark pink */
+          --color-bg-8: rgba(8, 145, 178, 0.15); /* Dark cyan */
+          
+          /* Semantic Color Tokens (Dark Mode) */
+          --color-background: var(--color-charcoal-700);
+          --color-surface: var(--color-charcoal-800);
+          --color-text: var(--color-black); /* DÜZELTME: Koyu modda metin rengi siyah yapıldı */
+          --color-text-secondary: var(--color-slate-500); /* DÜZELTME: Koyu modda ikincil metin rengi koyu yapıldı */
+          --color-primary: var(--color-teal-300);
+          --color-primary-hover: var(--color-teal-400);
+          --color-primary-active: var(--color-teal-800);
+          --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+          --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+          --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+          --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+          --color-error: var(--color-red-400);
+          --color-success: var(--color-teal-300);
+          --color-warning: var(--color-orange-400);
+          --color-info: var(--color-gray-300);
+          --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+          --color-btn-primary-text: var(--color-slate-900);
+          --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
+          --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+          --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+          --button-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+          --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+          --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
+
+          /* Common style patterns - updated for dark mode */
+          --focus-ring: 0 0 0 3px var(--color-focus-ring);
+          --focus-outline: 2px solid var(--color-primary);
+          --status-bg-opacity: 0.15;
+          --status-border-opacity: 0.25;
+          --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+          --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+          /* RGB versions for dark mode */
+          --color-success-rgb: var(--color-teal-300-rgb);
+          --color-error-rgb: var(--color-red-400-rgb);
+          --color-warning-rgb: var(--color-orange-400-rgb);
+          --color-info-rgb: var(--color-gray-300-rgb);
+        }
+      }
+
+      /* Data attribute for manual theme switching */
+      [data-color-scheme="dark"] {
+        /* RGB versions for opacity control (dark mode) */
+        --color-gray-400-rgb: 119, 124, 124;
+        --color-teal-300-rgb: 50, 184, 198;
+        --color-gray-300-rgb: 167, 169, 169;
+        --color-gray-200-rgb: 245, 245, 245;
+
+        /* Colorful background palette - Dark Mode */
+        --color-bg-1: rgba(29, 78, 216, 0.15); /* Dark blue */
+        --color-bg-2: rgba(180, 83, 9, 0.15); /* Dark yellow */
+        --color-bg-3: rgba(21, 128, 61, 0.15); /* Dark green */
+        --color-bg-4: rgba(185, 28, 28, 0.15); /* Dark red */
+        --color-bg-5: rgba(107, 33, 168, 0.15); /* Dark purple */
+        --color-bg-6: rgba(194, 65, 12, 0.15); /* Dark orange */
+        --color-bg-7: rgba(190, 24, 93, 0.15); /* Dark pink */
+        --color-bg-8: rgba(8, 145, 178, 0.15); /* Dark cyan */
+        
+        /* Semantic Color Tokens (Dark Mode) */
+        --color-background: var(--color-charcoal-700);
+        --color-surface: var(--color-charcoal-800);
+        --color-text: var(--color-black); /* DÜZELTME: Koyu modda metin rengi siyah yapıldı */
+        --color-text-secondary: var(--color-slate-500); /* DÜZELTME: Koyu modda ikincil metin rengi koyu yapıldı */
+        --color-primary: var(--color-teal-300);
+        --color-primary-hover: var(--color-teal-400);
+        --color-primary-active: var(--color-teal-800);
+        --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+        --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+        --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+        --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+        --color-error: var(--color-red-400);
+        --color-success: var(--color-teal-300);
+        --color-warning: var(--color-orange-400);
+        --color-info: var(--color-gray-300);
+        --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+        --color-btn-primary-text: var(--color-slate-900);
+        --color-card-border: rgba(var(--color-gray-400-rgb), 0.15);
+        --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+        --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+        --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+        --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
+
+        /* Common style patterns - updated for dark mode */
+        --focus-ring: 0 0 0 3px var(--color-focus-ring);
+        --focus-outline: 2px solid var(--color-primary);
+        --status-bg-opacity: 0.15;
+        --status-border-opacity: 0.25;
+        --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+        /* RGB versions for dark mode */
+        --color-success-rgb: var(--color-teal-300-rgb);
+        --color-error-rgb: var(--color-red-400-rgb);
+        --color-warning-rgb: var(--color-orange-400-rgb);
+        --color-info-rgb: var(--color-gray-300-rgb);
+      }
+
+      [data-color-scheme="light"] {
+        /* RGB versions for opacity control (light mode) */
+        --color-brown-600-rgb: 94, 82, 64;
+        --color-teal-500-rgb: 33, 128, 141;
+        --color-slate-900-rgb: 19, 52, 59;
+        
+        /* Semantic Color Tokens (Light Mode) */
+        --color-background: var(--color-cream-50);
+        --color-surface: var(--color-cream-100);
+        --color-text: var(--color-black);
+        --color-text-secondary: var(--color-slate-500);
+        --color-primary: var(--color-teal-500);
+        --color-primary-hover: var(--color-teal-600);
+        --color-primary-active: var(--color-teal-700);
+        --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+        --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+        --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+        --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+        --color-btn-primary-text: var(--color-cream-50);
+        --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+        --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+        --color-error: var(--color-red-500);
+        --color-success: var(--color-teal-500);
+        --color-warning: var(--color-orange-500);
+        --color-info: var(--color-slate-500);
+        --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+
+        /* RGB versions for light mode */
+        --color-success-rgb: var(--color-teal-500-rgb);
+        --color-error-rgb: var(--color-red-500-rgb);
+        --color-warning-rgb: var(--color-orange-500-rgb);
+        --color-info-rgb: var(--color-slate-500-rgb);
+      }
+
+      /* Base styles */
+      html {
+        font-size: var(--font-size-base);
+        font-family: var(--font-family-base);
+        line-height: var(--line-height-normal);
+        color: var(--color-text);
+        background-color: var(--color-background);
+        -webkit-font-smoothing: antialiased;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+        font-weight: var(--font-weight-semibold);
+        line-height: var(--line-height-tight);
+        color: var(--color-text);
+        letter-spacing: var(--letter-spacing-tight);
+      }
+
+      h1 {
+        font-size: var(--font-size-4xl);
+      }
+      h2 {
+        font-size: var(--font-size-3xl);
+      }
+      h3 {
+        font-size: var(--font-size-2xl);
+      }
+      h4 {
+        font-size: var(--font-size-xl);
+      }
+      h5 {
+        font-size: var(--font-size-lg);
+      }
+      h6 {
+        font-size: var(--font-size-md);
+      }
+
+      p {
+        margin: 0 0 var(--space-16) 0;
+      }
+
+      a {
+        color: var(--color-primary);
+        text-decoration: none;
+        transition: color var(--duration-fast) var(--ease-standard);
+      }
+
+      a:hover {
+        color: var(--color-primary-hover);
+      }
+
+      code,
+      pre {
+        font-family: var(--font-family-mono);
+        font-size: calc(var(--font-size-base) * 0.95);
+        background-color: var(--color-secondary);
+        border-radius: var(--radius-sm);
+      }
+
+      code {
+        padding: var(--space-1) var(--space-4);
+      }
+
+      pre {
+        padding: var(--space-16);
+        margin: var(--space-16) 0;
+        overflow: auto;
+        border: 1px solid var(--color-border);
+      }
+
+      pre code {
+        background: none;
+        padding: 0;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--space-8) var(--space-16);
+        border-radius: var(--radius-base);
+        font-size: var(--font-size-base);
+        font-weight: 500;
+        line-height: 1.5;
+        cursor: pointer;
+        transition: all var(--duration-normal) var(--ease-standard);
+        border: none;
+        text-decoration: none;
+        position: relative;
+      }
+
+      .btn:focus-visible {
+        outline: none;
+        box-shadow: var(--focus-ring);
+      }
+
+      .btn--primary {
+        background: var(--color-primary);
+        color: var(--color-btn-primary-text);
+      }
+
+      .btn--primary:hover {
+        background: var(--color-primary-hover);
+      }
+
+      .btn--primary:active {
+        background: var(--color-primary-active);
+      }
+
+      .btn--secondary {
+        background: var(--color-secondary);
+        color: var(--color-text);
+      }
+
+      .btn--secondary:hover {
+        background: var(--color-secondary-hover);
+      }
+
+      .btn--secondary:active {
+        background: var(--color-secondary-active);
+      }
+
+      .btn--outline {
+        background: transparent;
+        border: 1px solid var(--color-border);
+        color: var(--color-text);
+      }
+
+      .btn--outline:hover {
+        background: var(--color-secondary);
+      }
+
+      .btn--sm {
+        padding: var(--space-4) var(--space-12);
+        font-size: var(--font-size-sm);
+        border-radius: var(--radius-sm);
+      }
+
+      .btn--lg {
+        padding: var(--space-10) var(--space-20);
+        font-size: var(--font-size-lg);
+        border-radius: var(--radius-md);
+      }
+
+      .btn--full-width {
+        width: 100%;
+      }
+
+      .btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      /* Form elements */
+      .form-control {
+        display: block;
+        width: 100%;
+        padding: var(--space-8) var(--space-12);
+        font-size: var(--font-size-md);
+        line-height: 1.5;
+        color: var(--color-text);
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-base);
+        transition: border-color var(--duration-fast) var(--ease-standard),
+          box-shadow var(--duration-fast) var(--ease-standard);
+      }
+
+      textarea.form-control {
+        font-family: var(--font-family-base);
+        font-size: var(--font-size-base);
+      }
+
+      select.form-control {
+        padding: var(--space-8) var(--space-12);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: var(--select-caret-light);
+        background-repeat: no-repeat;
+        background-position: right var(--space-12) center;
+        background-size: 16px;
+        padding-right: var(--space-32);
+      }
+
+      /* Add a dark mode specific caret */
+      @media (prefers-color-scheme: dark) {
+        select.form-control {
+          background-image: var(--select-caret-dark);
+        }
+      }
+
+      /* Also handle data-color-scheme */
+      [data-color-scheme="dark"] select.form-control {
+        background-image: var(--select-caret-dark);
+      }
+
+      [data-color-scheme="light"] select.form-control {
+        background-image: var(--select-caret-light);
+      }
+
+      .form-control:focus {
+        border-color: var(--color-primary);
+        outline: var(--focus-outline);
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: var(--space-8);
+        font-weight: var(--font-weight-medium);
+        font-size: var(--font-size-sm);
+      }
+
+      .form-group {
+        margin-bottom: var(--space-16);
+      }
+
+      /* Card component */
+      .card {
+        background-color: var(--color-surface);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--color-card-border);
+        box-shadow: var(--shadow-sm);
+        overflow: hidden;
+        transition: box-shadow var(--duration-normal) var(--ease-standard);
+      }
+
+      .card:hover {
+        box-shadow: var(--shadow-md);
+      }
+
+      .card__body {
+        padding: var(--space-16);
+      }
+
+      .card__header,
+      .card__footer {
+        padding: var(--space-16);
+        border-bottom: 1px solid var(--color-card-border-inner);
+      }
+
+      /* Status indicators - simplified with CSS variables */
+      .status {
+        display: inline-flex;
+        align-items: center;
+        padding: var(--space-6) var(--space-12);
+        border-radius: var(--radius-full);
+        font-weight: var(--font-weight-medium);
+        font-size: var(--font-size-sm);
+      }
+
+      .status--success {
+        background-color: rgba(
+          var(--color-success-rgb, 33, 128, 141),
+          var(--status-bg-opacity)
+        );
+        color: var(--color-success);
+        border: 1px solid
+          rgba(var(--color-success-rgb, 33, 128, 141), var(--status-border-opacity));
+      }
+
+      .status--error {
+        background-color: rgba(
+          var(--color-error-rgb, 192, 21, 47),
+          var(--status-bg-opacity)
+        );
+        color: var(--color-error);
+        border: 1px solid
+          rgba(var(--color-error-rgb, 192, 21, 47), var(--status-border-opacity));
+      }
+
+      .status--warning {
+        background-color: rgba(
+          var(--color-warning-rgb, 168, 75, 47),
+          var(--status-bg-opacity)
+        );
+        color: var(--color-warning);
+        border: 1px solid
+          rgba(var(--color-warning-rgb, 168, 75, 47), var(--status-border-opacity));
+      }
+
+      .status--info {
+        background-color: rgba(
+          var(--color-info-rgb, 98, 108, 113),
+          var(--status-bg-opacity)
+        );
+        color: var(--color-info);
+        border: 1px solid
+          rgba(var(--color-info-rgb, 98, 108, 113), var(--status-border-opacity));
+      }
+
+      /* Container layout */
+      .container {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: var(--space-16);
+        padding-left: var(--space-16);
+      }
+
+      @media (min-width: 640px) {
+        .container {
+          max-width: var(--container-sm);
+        }
+      }
+      @media (min-width: 768px) {
+        .container {
+          max-width: var(--container-md);
+        }
+      }
+      @media (min-width: 1024px) {
+        .container {
+          max-width: var(--container-lg);
+        }
+      }
+      @media (min-width: 1280px) {
+        .container {
+          max-width: var(--container-xl);
+        }
+      }
+
+      /* Utility classes */
+      .flex {
+        display: flex;
+      }
+      .flex-col {
+        flex-direction: column;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      .justify-between {
+        justify-content: space-between;
+      }
+      .gap-4 {
+        gap: var(--space-4);
+      }
+      .gap-8 {
+        gap: var(--space-8);
+      }
+      .gap-16 {
+        gap: var(--space-16);
+      }
+
+      .m-0 {
+        margin: 0;
+      }
+      .mt-8 {
+        margin-top: var(--space-8);
+      }
+      .mb-8 {
+        margin-bottom: var(--space-8);
+      }
+      .mx-8 {
+        margin-left: var(--space-8);
+        margin-right: var(--space-8);
+      }
+      .my-8 {
+        margin-top: var(--space-8);
+        margin-bottom: var(--space-8);
+      }
+
+      .p-0 {
+        padding: 0;
+      }
+      .py-8 {
+        padding-top: var(--space-8);
+        padding-bottom: var(--space-8);
+      }
+      .px-8 {
+        padding-left: var(--space-8);
+        padding-right: var(--space-8);
+      }
+      .py-16 {
+        padding-top: var(--space-16);
+        padding-bottom: var(--space-16);
+      }
+      .px-16 {
+        padding-left: var(--space-16);
+        padding-right: var(--space-16);
+      }
+
+      .block {
+        display: block;
+      }
+      .hidden {
+        display: none;
+      }
+
+      /* Accessibility */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
+      :focus-visible {
+        outline: var(--focus-outline);
+        outline-offset: 2px;
+      }
+
+      /* Dark mode specifics */
+      [data-color-scheme="dark"] .btn--outline {
+        border: 1px solid var(--color-border-secondary);
+      }
+
+      /* END PERPLEXITY DESIGN SYSTEM */
+      /* Hero Section - Etkileyici Tasarım */
+      .hero-section {
+        background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+          radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+      }
+
+      .hero-particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.5), transparent),
+          radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.3), transparent),
+          radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.6), transparent),
+          radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.4), transparent);
+        background-repeat: repeat;
+        background-size: 200px 200px;
+        animation: float-particles 15s linear infinite;
+      }
+
+      @keyframes float-particles {
+        0% { transform: translate(0, 0); }
+        100% { transform: translate(-200px, -200px); }
+      }
+
+      .hero-content {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .hero-logo-area {
+        margin-bottom: var(--space-32);
+        text-align: center;
+      }
+
+      .university-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--color-slate-900);
+        padding: var(--space-8) var(--space-20);
+        border-radius: var(--radius-full);
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-medium);
+        margin-bottom: var(--space-20);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+      }
+
+      .hero-main-title {
+        font-family: var(--font-family-serif);
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 800;
+        color: var(--color-text); /* DEĞİŞTİRİLDİ */
+        margin-bottom: var(--space-16);
+        letter-spacing: var(--letter-spacing-tight);
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .hero-subtitle {
+        font-size: var(--font-size-xl);
+        color: var(--color-text-secondary);
+        font-weight: var(--font-weight-medium);
+        margin-bottom: var(--space-32);
+        text-align: center;
+      }
+
+      .hero-slogan-container {
+        margin-bottom: var(--space-32);
+        text-align: center;
+      }
+
+      .hero-slogan {
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-text); /* DEĞİŞTİRİLDİ */
+        margin-bottom: var(--space-20);
+        line-height: var(--line-height-tight);
+        text-align: center;
+      }
+
+      .hero-description {
+        font-size: var(--font-size-lg);
+        color: var(--color-text-secondary);
+        line-height: var(--line-height-normal);
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .hero-cta-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-16);
+        text-align: center;
+      }
+
+      .hero-cta-btn {
+        background: linear-gradient(135deg, #000, #4b5563);
+        color: var(--color-white);
+        padding: var(--space-20) var(--space-32);
+        border: none;
+        border-radius: var(--radius-full);
+        font-size: var(--font-size-xl);
+        font-weight: var(--font-weight-semibold);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transition: all var(--duration-normal) var(--ease-standard);
+      }
+
+      .hero-cta-btn:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .btn-content {
+        display: flex;
+        align-items: center;
+        gap: var(--space-12);
+        position: relative;
+        z-index: 2;
+      }
+
+      .btn-icon {
+        font-size: var(--font-size-2xl);
+      }
+
+      .btn-particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .hero-cta-btn:hover .btn-particles {
+        opacity: 1;
+        animation: pulse-glow 1.5s ease-in-out infinite;
+      }
+
+      @keyframes pulse-glow {
+        0%, 100% { transform: scale(1); opacity: 0.3; }
+        50% { transform: scale(1.2); opacity: 0.1; }
+      }
+
+      .hero-cta-subtext {
+        font-size: var(--font-size-base);
+        color: var(--color-text-secondary);
+        font-weight: var(--font-weight-medium);
+        text-align: center;
+      }
+
+      /* Section Styling */
+      .section-header {
+        text-align: center;
+        margin-bottom: var(--space-32);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-text);
+        margin-bottom: var(--space-20);
+        line-height: var(--line-height-tight);
+      }
+
+      .section-subtitle {
+        font-size: var(--font-size-lg);
+        color: var(--color-text-secondary);
+        line-height: var(--line-height-normal);
+      }
+
+      /* Soft Skills Section - Pastel Yeşil */
+      .soft-skills-section {
+        padding: var(--space-32) 0;
+        background: #f0fdf4;
+        position: relative;
+      }
+
+      .stats-showcase {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--space-24);
+        margin: var(--space-32) 0;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .stat-card {
+        background: var(--color-white);
+        padding: var(--space-24);
+        border-radius: var(--radius-lg);
+        text-align: center;
+        border: 1px solid rgba(34, 197, 94, 0.2);
+        box-shadow: var(--shadow-sm);
+        transition: all var(--duration-normal) var(--ease-standard);
+      }
+
+      .stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+        border-color: rgba(34, 197, 94, 0.4);
+      }
+
+      .stat-number {
+        font-size: var(--font-size-4xl);
+        font-weight: var(--font-weight-bold);
+        color: #22c55e;
+        display: inline;
+      }
+
+      .stat-symbol {
+        font-size: var(--font-size-2xl);
+        font-weight: var(--font-weight-bold);
+        color: #22c55e;
+        display: inline;
+      }
+
+      .stat-label {
+        font-size: var(--font-size-sm);
+        color: var(--color-text-secondary);
+        margin-top: var(--space-8);
+        font-weight: var(--font-weight-medium);
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--space-24);
+        margin-top: var(--space-32);
+      }
+
+      .skill-item {
+        background: var(--color-white);
+        padding: var(--space-24);
+        border-radius: var(--radius-lg);
+        text-align: center;
+        border: 1px solid rgba(34, 197, 94, 0.2);
+        transition: all var(--duration-normal) var(--ease-standard);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .skill-item:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+        border-color: rgba(34, 197, 94, 0.4);
+      }
+
+      .skill-icon {
+        font-size: 56px;
+        margin-bottom: var(--space-16);
+        display: block;
+      }
+
+      .skill-item h3 {
+        font-size: var(--font-size-xl);
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-text);
+        margin-bottom: var(--space-12);
+      }
+
+      .skill-item p {
+        font-size: var(--font-size-base);
+        color: var(--color-text-secondary);
+        line-height: var(--line-height-normal);
+      }
+
+      /* Benefits Section - Pastel Mor */
+      .benefits-section {
+        padding: var(--space-32) 0;
+        background: #faf5ff;
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: var(--space-24);
+        margin-top: var(--space-32);
+      }
+
+      .benefit-card {
+        background: var(--color-white);
+        padding: var(--space-24);
+        border-radius: var(--radius-lg);
+        text-align: center;
+        border: 1px solid rgba(147, 51, 234, 0.2);
+        transition: all var(--duration-normal) var(--ease-standard);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+        border-color: rgba(147, 51, 234, 0.4);
+      }
+
+      .benefit-icon {
+        font-size: 56px;
+        margin-bottom: var(--space-16);
+        display: block;
+      }
+
+      .benefit-card h3 {
+        font-size: var(--font-size-xl);
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-text);
+        margin-bottom: var(--space-12);
+      }
+
+      .benefit-card p {
+        font-size: var(--font-size-base);
+        color: var(--color-text-secondary);
+        line-height: var(--line-height-normal);
+      }
+
+      /* Teams Section - Pastel Turuncu */
+      .teams-section {
+        padding: var(--space-32) 0;
+        background: #fff7ed;
+      }
+
+      /* 2x3 Grid Layout */
+      .teams-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-32);
+        margin-top: var(--space-32);
+      }
+
+      @media (min-width: 1200px) {
+        .teams-grid {
+          grid-template-columns: repeat(2, 1fr);
+          max-width: 1400px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      .team-card {
+        background: var(--color-white);
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(249, 115, 22, 0.2);
+        transition: all var(--duration-normal) var(--ease-standard);
+        box-shadow: var(--shadow-sm);
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .team-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+        border-color: rgba(249, 115, 22, 0.4);
+      }
+
+      .special-card {
+        border: 2px solid rgba(6, 182, 212, 0.3);
+        background: linear-gradient(135deg, var(--color-white), rgba(6, 182, 212, 0.05));
+      }
+
+      .special-card:hover {
+        border-color: rgba(6, 182, 212, 0.6);
+      }
+
+      .team-header {
+        padding: var(--space-24);
+        text-align: center;
+        background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), var(--color-white));
+        border-bottom: 1px solid rgba(249, 115, 22, 0.1);
+      }
+
+      .special-card .team-header {
+        background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), var(--color-white));
+        border-bottom-color: rgba(6, 182, 212, 0.2);
+      }
+
+      .team-icon {
+        font-size: 64px;
+        margin-bottom: var(--space-16);
+        display: block;
+      }
+
+      .team-name {
+        font-size: var(--font-size-2xl);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-text);
+        margin-bottom: var(--space-12);
+      }
+
+      .team-description {
+        font-size: var(--font-size-base);
+        color: var(--color-text-secondary);
+        line-height: var(--line-height-normal);
+        font-style: italic;
+      }
+
+      .team-details {
+        padding: var(--space-24);
+        flex-grow: 1;
+      }
+
+      .detail-section {
+        margin-bottom: var(--space-20);
+      }
+
+      .detail-section h4 {
+        font-size: var(--font-size-lg);
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-text);
+        margin-bottom: var(--space-12);
+        display: flex;
+        align-items: center;
+        gap: var(--space-8);
+      }
+
+      .detail-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .detail-section li {
+        font-size: var(--font-size-sm);
+        color: var(--color-text-secondary);
+        margin-bottom: var(--space-8);
+        padding-left: var(--space-16);
+        position: relative;
+        line-height: var(--line-height-normal);
+      }
+
+      .detail-section li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: #f97316;
+        font-weight: var(--font-weight-bold);
+        font-size: var(--font-size-lg);
+      }
+
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-8);
+      }
+
+      .skill-tag {
+        background: rgba(249, 115, 22, 0.1);
+        color: #f97316;
+        padding: var(--space-4) var(--space-8);
+        border-radius: var(--radius-sm);
+        font-size: var(--font-size-xs);
+        font-weight: var(--font-weight-medium);
+        border: 1px solid rgba(249, 115, 22, 0.2);
+      }
+
+      .career-item {
+        font-size: var(--font-size-sm);
+        color: var(--color-text-secondary);
+        margin-bottom: var(--space-6);
+        padding: var(--space-8);
+        background: rgba(249, 115, 22, 0.05);
+        border-radius: var(--radius-sm);
+        border-left: 3px solid #f97316;
+      }
+
+      .sub-teams {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-12);
+      }
+
+      .sub-team {
+        display: flex;
+        gap: var(--space-12);
+        padding: var(--space-12);
+        background: rgba(6, 182, 212, 0.05);
+        border-radius: var(--radius-base);
+        border: 1px solid rgba(6, 182, 212, 0.2);
+      }
+
+      .sub-team-icon {
+        font-size: var(--font-size-2xl);
+        flex-shrink: 0;
+      }
+
+      .sub-team-name {
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-text);
+        margin-bottom: var(--space-4);
+      }
+
+      .sub-team-desc {
+        font-size: var(--font-size-xs);
+        color: var(--color-text-secondary);
+        line-height: var(--line-height-normal);
+      }
+
+      .special-note {
+        background: rgba(255, 193, 7, 0.1);
+        border: 1px solid rgba(255, 193, 7, 0.3);
+        border-radius: var(--radius-base);
+        padding: var(--space-16);
+        margin-top: var(--space-16);
+        display: flex;
+        gap: var(--space-12);
+        align-items: flex-start;
+      }
+
+      .special-note-icon {
+        font-size: var(--font-size-xl);
+        color: #fbbf24;
+        flex-shrink: 0;
+      }
+
+      .special-note-text {
+        font-size: var(--font-size-sm);
+        color: var(--color-text-secondary);
+        line-height: var(--line-height-normal);
+      }
+
+      .team-apply-btn {
+        display: block;
+        width: 100%;
+        background: linear-gradient(135deg, #f97316, #ea580c);
+        color: var(--color-white);
+        text-decoration: none;
+        padding: var(--space-16);
+        text-align: center;
+        font-size: var(--font-size-lg);
+        font-weight: var(--font-weight-semibold);
+        position: relative;
+        overflow: hidden;
+        transition: all var(--duration-normal) var(--ease-standard);
+        margin-top: auto;
+      }
+
+      .special-card .team-apply-btn {
+        background: linear-gradient(135deg, #06b6d4, #0891b2);
+      }
+
+      .team-apply-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+        color: var(--color-white);
+      }
+
+      .special-card .team-apply-btn:hover {
+        box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3);
+        color: var(--color-white);
+      }
+
+      .btn-glow {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.6s ease;
+      }
+
+      .team-apply-btn:hover .btn-glow {
+        left: 100%;
+      }
+
+      .contact-btn {
+        background: linear-gradient(135deg, #6b7280, #4b5563) !important;
+        border: 2px solid rgba(107, 114, 128, 0.3);
+      }
+
+      .contact-btn:hover {
+        background: linear-gradient(135deg, #4b5563, #374151) !important;
+        box-shadow: 0 10px 25px rgba(107, 114, 128, 0.3) !important;
+        border-color: rgba(107, 114, 128, 0.6);
+      }
+
+      /* Footer Section */
+      .footer-section {
+        background: var(--color-charcoal-800);
+        color: rgba(255, 255, 255, 0.8);
+        padding: var(--space-32) 0;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--space-32);
+        margin-bottom: var(--space-32);
+        padding-bottom: var(--space-24);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-title {
+          font-size: var(--font-size-lg);
+          font-weight: var(--font-weight-semibold);
+          color: var(--color-white);
+          margin-bottom: var(--space-16);
+      }
+      
+      .footer-description, .footer-contact p {
+          font-size: var(--font-size-sm);
+          line-height: var(--line-height-normal);
+          margin-bottom: var(--space-8);
+      }
+
+      .footer-slogan {
+        color: var(--color-teal-300) !important;
+        font-weight: var(--font-weight-medium);
+        font-style: italic;
+        font-size: var(--font-size-sm);
+      }
+
+      .footer-link {
+          color: rgba(255, 255, 255, 0.8);
+          text-decoration: none;
+          transition: color var(--duration-fast) var(--ease-standard);
+      }
+
+      .footer-link:hover {
+          color: var(--color-white);
+      }
+
+      .social-links {
+        display: flex;
+        gap: var(--space-16);
+        align-items: center;
+      }
+
+      .social-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.1);
+          color: var(--color-white);
+          transition: all var(--duration-normal) var(--ease-standard);
+      }
+
+      .social-icon svg {
+          width: 20px;
+          height: 20px;
+      }
+
+      .social-icon:hover {
+          background-color: var(--color-teal-300);
+          color: var(--color-charcoal-800);
+          transform: translateY(-2px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: var(--space-24);
+      }
+
+      .footer-bottom p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: var(--font-size-sm);
+        margin: 0;
+      }
+
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .teams-grid {
+          grid-template-columns: 1fr;
+          gap: var(--space-24);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: var(--space-32) 0;
+          min-height: 80vh;
+        }
+        
+        .hero-main-title {
+          font-size: clamp(2rem, 8vw, 3.5rem);
+        }
+        
+        .hero-slogan {
+          font-size: clamp(1.5rem, 6vw, 2rem);
+        }
+        
+        .section-title {
+          font-size: clamp(1.5rem, 6vw, 2rem);
+        }
+        
+        .stats-showcase {
+          grid-template-columns: 1fr;
+          gap: var(--space-16);
+        }
+        
+        .skills-grid, .benefits-grid {
+          grid-template-columns: 1fr;
+          gap: var(--space-20);
+        }
+        
+        .teams-grid {
+          grid-template-columns: 1fr;
+          gap: var(--space-20);
+        }
+        
+        .team-details {
+          padding: var(--space-16);
+        }
+        
+        .team-header {
+          padding: var(--space-16);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding-left: var(--space-12);
+          padding-right: var(--space-12);
+        }
+        
+        .hero-cta-btn {
+          padding: var(--space-16) var(--space-24);
+          font-size: var(--font-size-lg);
+        }
+        
+        .btn-content {
+          flex-direction: column;
+          gap: var(--space-8);
+        }
+        
+        .team-icon {
+          font-size: 48px;
+        }
+        
+        .skill-icon, .benefit-icon {
+          font-size: 40px;
+        }
+        
+        .skills-list {
+          gap: var(--space-4);
+        }
+        
+        .skill-tag {
+          font-size: 10px;
+          padding: var(--space-2) var(--space-6);
+        }
+        
+        .sub-team {
+          flex-direction: column;
+          text-align: center;
+          gap: var(--space-8);
+        }
+        
+        .special-note {
+          flex-direction: column;
+          text-align: center;
+          gap: var(--space-8);
+        }
+      }
+
+      /* Animation Classes */
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+      }
+
+      .slide-up {
+        opacity: 0;
+        transform: translateY(40px);
+        animation: slideUp 0.8s ease forwards;
+      }
+
+      @keyframes fadeIn {
+        to { opacity: 1; }
+      }
+
+      @keyframes slideUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Accessibility */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      /* High contrast mode */
+      @media (prefers-contrast: high) {
+        .team-card, .skill-item, .benefit-card, .stat-card {
+          border: 2px solid var(--color-text);
+        }
+      }
+
+      /* Print styles */
+      @media print {
+        .hero-particles, .btn-particles, .btn-glow {
+          display: none;
+        }
+        
+        .team-card, .skill-item, .benefit-card {
+          break-inside: avoid;
+        }
+      }
+    </style>
+</head>
+<body>
+    <!-- Hero Section - Etkileyici Tasarım -->
+    <section class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-particles"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-logo-area">
+                    <div class="university-badge">
+                        <span class="badge-text">Bandırma Onyedi Eylül Üniversitesi</span>
+                    </div>
+                    <h1 class="hero-main-title">BANÜ YBST</h1>
+                    <div class="hero-subtitle">Yönetim Bilişim Sistemleri Topluluğu</div>
+                </div>
+                
+                <div class="hero-slogan-container">
+                    <h2 class="hero-slogan">Geleceğin Liderlerini Yetiştiren Topluluk!</h2>
+                    <p class="hero-description">
+                        BANÜ'nün en aktif topluluğuna hoşgeldiniz! Teknoloji ve yönetim dünyasında iz bırakmak isteyen gençler için eşsiz fırsatlar sunuyoruz.
+                    </p>
+                </div>
+                
+                <div class="hero-cta-area">
+                    <button class="hero-cta-btn" onclick="scrollToTeams()">
+                        <span class="btn-content">
+                            <span class="btn-icon">🚀</span>
+                            <span class="btn-text">Ekipleri Keşfet</span>
+                        </span>
+                        <div class="btn-particles"></div>
+                    </button>
+                    <p class="hero-cta-subtext">6 farklı uzmanlaşma alanında kariyer fırsatları</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soft Skills Bölümü -->
+    <section class="soft-skills-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Neden Soft Skills Bu Kadar Önemli?</h2>
+                <p class="section-subtitle">
+                    21. yüzyılda teknik bilgi artık tek başına yeterli değil. Soft skills, kişilerarası ilişkiler, 
+                    iletişim, liderlik ve problem çözme gibi sosyal becerileri kapsar. BANÜ YBST'de bu becerileri 
+                    kazanacak ve kariyer hedeflerine ulaşacaksın!
+                </p>
+            </div>
+
+            <div class="stats-showcase">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="89">0</div>
+                    <div class="stat-symbol">%</div>
+                    <div class="stat-label">YBS uzmanı iletişimi kritik buluyor</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="70">0</div>
+                    <div class="stat-symbol">%</div>
+                    <div class="stat-label">Performans değerlendirmelerindeki etkisi</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="25">0</div>
+                    <div class="stat-symbol">%</div>
+                    <div class="stat-label">Maaş artışındaki soft skills etkisi</div>
+                </div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-icon">💬</div>
+                    <h3>İletişim</h3>
+                    <p>Fikirlerini net, ikna edici ve etkili şekilde ifade etme becerin</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🤝</div>
+                    <h3>Takım Çalışması</h3>
+                    <p>Farklı kişilerle uyum içinde ortak hedeflere yönelik çalışabilme yeteneğin</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🧩</div>
+                    <h3>Problem Çözme</h3>
+                    <p>Karmaşık durumları analiz ederek yaratıcı ve etkili çözümler üretme becerin</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">👑</div>
+                    <h3>Liderlik</h3>
+                    <p>İnsanları motive etme, yönlendirme ve ilham verme gücün</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">⏰</div>
+                    <h3>Zaman Yönetimi</h3>
+                    <p>Öncelikleri belirleyerek maksimum verimlilik sağlama becerin</p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📊</div>
+                    <h3>Analitik Düşünce</h3>
+                    <p>Verileri yorumlayarak stratejik ve bilinçli kararlar alma yeteneğin</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faydalar Bölümü -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">BANÜ YBST'ye Katılmanın Avantajları</h2>
+                <p class="section-subtitle">
+                    Sadece bir topluluk değil, kariyer dönüşümünün başlangıcı. Burada kazandığın deneyimler 
+                    seni mezun olmadan önce sektörde fark yaratacak!
+                </p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📄</div>
+                    <h3>CV'de Fark Yaratma</h3>
+                    <p>İş başvurularında öne çıkmanı sağlayacak topluluk deneyimleri kazan</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌐</div>
+                    <h3>Ağ Kurma ve Mentor Bulma</h3>
+                    <p>Sektör uzmanlarıyla tanış ve kariyer mentorları edin</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💼</div>
+                    <h3>Gerçek Projelerle Deneyim</h3>
+                    <p>Teorik bilgileri pratiğe dök ve portfolyo oluştur</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">👑</div>
+                    <h3>Liderlik Becerileri Geliştirme</h3>
+                    <p>Takım yönetimi, karar verme ve stratejik düşünme yeteneklerini güçlendir</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Sektör Uzmanlarıyla Tanışma</h3>
+                    <p>İş dünyasından konuklar ve ağ kurma etkinlikleriyle bağlantı kur</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⭐</div>
+                    <h3>Kişisel Marka Oluşturma</h3>
+                    <p>Dijital platformlarda uzman kimlik ve etki yaratma becerisi kazan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ekipler Bölümü -->
+    <section class="teams-section" id="teams">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hangi Ekibe Uygunsun? Kendini Keşfet!</h2>
+                <p class="section-subtitle">
+                    Her ekip seni farklı bir kariyer yoluna hazırlayacak. Hangi alanda uzmanlaşmak istediğini seç ve 
+                    geleceğine şekil ver. Toplam 750+ öğrenci topluluğumuza üyedir. 6 ekibimizde toplam 30+ öğrenci yer almaktadır. 
+                </p>
+            </div>
+
+            <div class="teams-grid">
+                <!-- Sosyal Medya Ekibi -->
+                <div class="team-card" data-team="social-media">
+                    <div class="team-header">
+                        <div class="team-icon">📱</div>
+                        <h3 class="team-name">Sosyal Medya Ekibi</h3>
+                        <p class="team-description">Dijital dünyada topluluk markasını yöneten, yaratıcı içeriklerle gençleri etkileyen dinamik ekip</p>
+                    </div>
+                    <div class="team-details">
+                        <div class="detail-section">
+                            <h4>✨ Görevlerin</h4>
+                            <ul>
+                                <li>Instagram, LinkedIn, Twitter ve TikTok hesaplarını yönetme</li>
+                                <li>Etkinlik tanıtımları için yaratıcı kampanyalar tasarlama</li>
+                                <li>Video düzenleme, grafik tasarım ve metin yazma</li>
+                                <li>Sosyal medya analitiği ve performans raporları</li>
+                                <li>Etkileyici pazarlama ve işbirlikleri yürütme</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>🚀 Kazanacağın Beceriler</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">Dijital Pazarlama</span>
+                                <span class="skill-tag">CapCut</span>
+                                <span class="skill-tag">İçerik Pazarlama</span>
+                                <span class="skill-tag">Google Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://forms.gle/sEuv1FGGmQeE8Vnt7" target="_blank" class="team-apply-btn">
+                        <span>Sosyal Medya Ekibine Başvur</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                </div>
+
+                <!-- Sponsorluk Ekibi -->
+                <div class="team-card" data-team="sponsorship">
+                    <div class="team-header">
+                        <div class="team-icon">🤝</div>
+                        <h3 class="team-name">Sponsorluk Ekibi</h3>
+                        <p class="team-description">Kurumsal dünyayla güçlü bağlar kuran, büyük anlaşmalar yapan işletmecilik odaklı ekip</p>
+                    </div>
+                    <div class="team-details">
+                        <div class="detail-section">
+                            <h4>✨ Görevlerin</h4>
+                            <ul>
+                                <li>Şirket araştırması ve hedef sponsor listesi oluşturma</li>
+                                <li>Profesyonel sunum hazırlama ve pitch tasarlama</li>
+                                <li>Şirket temsilcileri ile görüşme ve pazarlık yürütme</li>
+                                <li>Sponsorluk paketleri tasarlama ve fiyatlandırma</li>
+                                <li>Kurumsal etkinlik organizasyonu ve takip</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>🚀 Kazanacağın Beceriler</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">B2B Satış</span>
+                                <span class="skill-tag">Kurumsal İletişim</span>
+                                <span class="skill-tag">Sunum Hazırlama</span>
+                                <span class="skill-tag">Müşteri İlişkileri</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://forms.gle/EjQXBvtTZyTcbjRY6" target="_blank" class="team-apply-btn">
+                        <span>Sponsorluk Ekibine Başvur</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                </div>
+
+                <!-- Tasarım Ekibi -->
+                <div class="team-card" data-team="design">
+                    <div class="team-header">
+                        <div class="team-icon">🎨</div>
+                        <h3 class="team-name">Tasarım Ekibi</h3>
+                        <p class="team-description">Yaratıcılıkla teknolojiyi buluşturan, görsel mükemmellik arayan sanatçı ruhlu ekip</p>
+                    </div>
+                    <div class="team-details">
+                        <div class="detail-section">
+                            <h4>✨ Görevlerin</h4>
+                            <ul>
+                                <li>Topluluk kurumsal kimliği ve marka rehberi geliştirme</li>
+                                <li>Etkinlik afişleri, broşürler ve tanıtım materyalleri tasarlama</li>
+                                <li>Web sitesi arayüz tasarımı ve kullanıcı deneyimi iyileştirme</li>
+                                <li>Sosyal medya görselleri ve hareketli grafikler</li>
+                                <li>Ürün tasarımı ve basım prodüksiyon</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>🚀 Kazanacağın Beceriler</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">Canva</span>
+                                <span class="skill-tag">UI/UX Tasarım</span>
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">Marka Kimliği</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://forms.gle/AyBaR5JVHEztQmhJ8" target="_blank" class="team-apply-btn">
+                        <span>Tasarım Ekibine Başvur</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                </div>
+
+                <!-- İnsan Kaynakları Ekibi -->
+                <div class="team-card" data-team="hr">
+                    <div class="team-header">
+                        <div class="team-icon">👥</div>
+                        <h3 class="team-name">İnsan Kaynakları Ekibi</h3>
+                        <p class="team-description">İnsan odaklı çalışan, yetenekleri keşfeden ve takım ruhunu güçlendiren lider ekip</p>
+                    </div>
+                    <div class="team-details">
+                        <div class="detail-section">
+                            <h4>✨ Görevlerin</h4>
+                            <ul>
+                                <li>Yetenek kazanım stratejileri ve işe alım süreçleri</li>
+                                <li>Uyum programları ve mentorluk sistemleri</li>
+                                <li>Performans değerlendirme ve geri bildirim sistemleri</li>
+                                <li>Takım oluşturma etkinlikleri ve motivasyon programları</li>
+                                <li>Çatışma yönetimi ve problem çözme</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>🚀 Kazanacağın Beceriler</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">Excel Kullanım</span>
+                                <span class="skill-tag">Liderlik</span>
+                                <span class="skill-tag">Çatışma Çözümü</span>
+                                <span class="skill-tag">Etkinlik Planlama</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://forms.gle/xhzRHQCFQdTosUZf9" target="_blank" class="team-apply-btn">
+                        <span>İK Ekibine Başvur</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                </div>
+
+                <!-- Proje Ekibi -->
+                <div class="team-card" data-team="project">
+                    <div class="team-header">
+                        <div class="team-icon">🎉</div>
+                        <h3 class="team-name">Proje Ekibi</h3>
+                        <p class="team-description">Sosyal etkinlikler, seminerler ve büyük zirveler organize eden, kampüs hayatını renklendiren organizatör ekip</p>
+                    </div>
+                    <div class="team-details">
+                        <div class="detail-section">
+                            <h4>✨ Görevlerin</h4>
+                            <ul>
+                                <li>Sosyal etkinlik organizasyonu ve koordinasyon</li>
+                                <li>Seminer ve atölye planlama ve düzenleme</li>
+                                <li>Yılın büyük zirvesi organizasyonu ve yönetimi</li>
+                                <li>UNIDES destekli projeler koordinasyonu</li>
+                                <li>Tanışma kahvaltıları ve ağ kurma etkinlikleri</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>🚀 Kazanacağın Beceriler</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">Etkinlik Yönetimi</span>
+                                <span class="skill-tag">Proje Koordinasyonu</span>
+                                <span class="skill-tag">Bütçe Yönetimi</span>
+                                <span class="skill-tag">Risk Yönetimi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://forms.gle/qPmXzus85KWM5pG29" target="_blank" class="team-apply-btn">
+                        <span>Proje Ekibine Başvur</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                </div>
+
+                <!-- Yazılım Geliştirme Ekibi -->
+                <div class="team-card special-card" data-team="development">
+                    <div class="team-header">
+                        <div class="team-icon">💻</div>
+                        <h3 class="team-name">Yazılım Geliştirme Ekibi</h3>
+                        <p class="team-description">Kendini teknik alanda geliştirmek isteyen, alt takımlardan oluşan teknoloji odaklı gelişim ekibi</p>
+                    </div>
+                    <div class="team-details">
+                        <div class="detail-section">
+                            <h4>🤖 Alt Takımlar</h4>
+                            <div class="sub-teams">
+                                <div class="sub-team">
+                                    <span class="sub-team-icon">📊</span>
+                                    <div>
+                                        <div class="sub-team-name">Veri Bilimi Takımı</div>
+                                        <div class="sub-team-desc">NLP, makine öğrenmesi, veri görselleştirme, keşifsel veri analizi</div>
+                                    </div>
+                                </div>
+                                <div class="sub-team">
+                                    <span class="sub-team-icon">🛡️</span>
+                                    <div>
+                                        <div class="sub-team-name">Siber Güvenlik Takımı</div>
+                                        <div class="sub-team-desc">Sızma testi, güvenlik denetimi, etik hacker operasyonları</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="special-note">
+                            <div class="special-note-icon">⚠️</div>
+                            <div class="special-note-text">
+                                <strong>Özel Not:</strong> Bu ekibin üye alımı DÖNEM BAŞINDA yüz yüze ekip liderleri tarafından yapılacaktır. 
+                                2025-2026 Güz & Bahar Dönemi'nde farklı takımların kurulması planlanmaktadır.
+                            </div>
+                        </div>
+                    </div>
+                    <a href="mailto:ybst@bandirma.edu.tr?subject=Yazılım Geliştirme Ekibi Başvurusu" class="team-apply-btn contact-btn">
+                        <span>İletişime Geç (Dönem Başında Alım)</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3 class="footer-title">BANÜ YBST</h3>
+                    <p class="footer-description">Bandırma Onyedi Eylül Üniversitesi<br>Yönetim Bilişim Sistemleri Topluluğu</p>
+                    <p class="footer-slogan">Geleceğin Liderlerini Yetiştiren Topluluk!</p>
+                </div>
+                <div class="footer-contact">
+                     <h3 class="footer-title">İletişim</h3>
+                     <p><a href="mailto:ybst@bandirma.edu.tr" class="footer-link">📧 ybst@bandirma.edu.tr</a></p>
+                     <p>📱 @banuybst</p>
+                </div>
+                <div class="footer-social">
+                    <h3 class="footer-title">Bizi Takip Edin</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/banuybst/" target="_blank" class="social-icon" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://tr.linkedin.com/company/banuybstoplulugu" target="_blank" class="social-icon" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="https://x.com/BanuYbst" target="_blank" class="social-icon" aria-label="Twitter">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BANÜ YBST - Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      // BANÜ YBST - Etkileyici JavaScript İşlevselliği
+
+      document.addEventListener('DOMContentLoaded', function() {
+          console.log('🚀 BANÜ YBST Uygulaması başlatılıyor...');
+
+          // Ana işlevleri başlat
+          initScrollToTeams();
+          initStatsAnimation();
+          initScrollAnimations();
+          initCardInteractions();
+          initButtonEffects();
+          initMobileOptimizations();
+          initAccessibility();
+
+          console.log('✅ Tüm özellikler başarıyla yüklendi!');
+      });
+
+      // Ekipler bölümüne yumuşak kaydırma
+      function scrollToTeams() {
+          const teamsSection = document.getElementById('teams');
+          if (teamsSection) {
+              const headerOffset = 80;
+              const elementPosition = teamsSection.offsetTop;
+              const offsetPosition = elementPosition - headerOffset;
+
+              window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+              });
+
+              // Haptic feedback simülasyonu
+              if (navigator.vibrate) {
+                  navigator.vibrate(50);
+              }
+
+              // Bildirim göster
+              showNotification('Ekiplerimizi incelemeye başlayabilirsin! 🎯', 'success');
+          } else {
+              console.error('Teams section bulunamadı!');
+          }
+      }
+
+      // Global fonksiyon olarak tanımla
+      window.scrollToTeams = scrollToTeams;
+
+      // Scroll to teams butonunu başlat
+      function initScrollToTeams() {
+          const ctaButton = document.querySelector('.hero-cta-btn');
+          if (ctaButton) {
+              // Click event listener ekle
+              ctaButton.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  
+                  console.log('CTA button tıklandı!');
+                  scrollToTeams();
+                  
+                  // Button animasyonu
+                  this.style.transform = 'scale(0.95)';
+                  setTimeout(() => {
+                      this.style.transform = '';
+                  }, 150);
+              });
+
+              // Onclick attribute'u da kontrol et
+              if (!ctaButton.onclick) {
+                  ctaButton.onclick = function(e) {
+                      e.preventDefault();
+                      scrollToTeams();
+                      return false;
+                  };
+              }
+          } else {
+              console.error('Hero CTA button bulunamadı!');
+          }
+      }
+
+      // İstatistik sayaç animasyonları
+      function initStatsAnimation() {
+          const observerOptions = {
+              threshold: 0.5,
+              rootMargin: '0px 0px -50px 0px'
+          };
+
+          const statsObserver = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      const statNumber = entry.target;
+                      const target = parseInt(statNumber.getAttribute('data-target'));
+                      
+                      if (!statNumber.hasAttribute('data-animated')) {
+                          animateNumber(statNumber, 0, target, 2000);
+                          statNumber.setAttribute('data-animated', 'true');
+                      }
+                  }
+              });
+          }, observerOptions);
+
+          // Tüm istatistik sayılarını gözle
+          document.querySelectorAll('.stat-number[data-target]').forEach(stat => {
+              statsObserver.observe(stat);
+          });
+      }
+
+      // Sayı animasyonu fonksiyonu
+      function animateNumber(element, start, end, duration) {
+          const startTime = performance.now();
+          
+          function updateNumber(currentTime) {
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              
+              // Easing function (ease-out-cubic)
+              const easedProgress = 1 - Math.pow(1 - progress, 3);
+              const currentValue = Math.round(start + (end - start) * easedProgress);
+              
+              element.textContent = currentValue;
+              
+              if (progress < 1) {
+                  requestAnimationFrame(updateNumber);
+              } else {
+                  element.textContent = end;
+              }
+          }
+          
+          requestAnimationFrame(updateNumber);
+      }
+
+      // Scroll animasyonları
+      function initScrollAnimations() {
+          const observerOptions = {
+              threshold: 0.1,
+              rootMargin: '0px 0px -50px 0px'
+          };
+
+          const scrollObserver = new IntersectionObserver((entries) => {
+              entries.forEach((entry, index) => {
+                  if (entry.isIntersecting) {
+                      // Staggered animation delay
+                      const delay = index * 100;
+                      
+                      setTimeout(() => {
+                          entry.target.classList.add('fade-in');
+                          entry.target.style.opacity = '1';
+                          entry.target.style.transform = 'translateY(0)';
+                      }, delay);
+
+                      // Özel animasyonlar
+                      if (entry.target.classList.contains('team-card')) {
+                          entry.target.style.animation = `slideUp 0.8s ease forwards ${delay}ms`;
+                      }
+                      
+                      if (entry.target.classList.contains('skill-item')) {
+                          entry.target.style.animation = `fadeIn 1s ease forwards ${delay}ms`;
+                      }
+
+                      if (entry.target.classList.contains('benefit-card')) {
+                          entry.target.style.animation = `slideUp 0.6s ease forwards ${delay}ms`;
+                      }
+                  }
+              });
+          }, observerOptions);
+
+          // Animasyonlu elementleri gözle
+          const animatedElements = document.querySelectorAll(
+              '.team-card, .skill-item, .benefit-card, .stat-card'
+          );
+          
+          animatedElements.forEach((element, index) => {
+              // Başlangıç stili
+              element.style.opacity = '0';
+              element.style.transform = 'translateY(40px)';
+              element.style.transition = 'all 0.6s ease';
+              
+              scrollObserver.observe(element);
+          });
+      }
+
+      // Kart etkileşimleri
+      function initCardInteractions() {
+          const teamCards = document.querySelectorAll('.team-card');
+          const skillItems = document.querySelectorAll('.skill-item');
+          const benefitCards = document.querySelectorAll('.benefit-card');
+          const statCards = document.querySelectorAll('.stat-card');
+
+          // Tüm kartlar için hover efektleri
+          [...teamCards, ...skillItems, ...benefitCards, ...statCards].forEach(card => {
+              card.addEventListener('mouseenter', function(e) {
+                  // 3D tilt efekti
+                  const rect = this.getBoundingClientRect();
+                  const centerX = rect.left + rect.width / 2;
+                  const centerY = rect.top + rect.height / 2;
+                  
+                  const mouseX = e.clientX;
+                  const mouseY = e.clientY;
+                  
+                  const rotateX = (mouseY - centerY) / 20;
+                  const rotateY = (centerX - mouseX) / 20;
+                  
+                  this.style.transform = `
+                      translateY(-8px) 
+                      rotateX(${rotateX}deg) 
+                      rotateY(${rotateY}deg) 
+                      scale(1.02)
+                  `;
+                  this.style.transformStyle = 'preserve-3d';
+                  this.style.transition = 'transform 0.3s ease';
+                  
+                  // Glow efekti
+                  this.style.filter = 'brightness(1.05)';
+              });
+
+              card.addEventListener('mousemove', function(e) {
+                  const rect = this.getBoundingClientRect();
+                  const centerX = rect.left + rect.width / 2;
+                  const centerY = rect.top + rect.height / 2;
+                  
+                  const mouseX = e.clientX;
+                  const mouseY = e.clientY;
+                  
+                  const rotateX = (mouseY - centerY) / 25;
+                  const rotateY = (centerX - mouseX) / 25;
+                  
+                  this.style.transform = `
+                      translateY(-8px) 
+                      rotateX(${rotateX}deg) 
+                      rotateY(${rotateY}deg) 
+                      scale(1.02)
+                  `;
+              });
+
+              card.addEventListener('mouseleave', function() {
+                  this.style.transform = 'translateY(0) rotateX(0) rotateY(0) scale(1)';
+                  this.style.filter = 'brightness(1)';
+              });
+          });
+
+          // Takım kartları için özel etkileşimler
+          teamCards.forEach(card => {
+              const applyBtn = card.querySelector('.team-apply-btn');
+              
+              // Kart tıklaması
+              card.addEventListener('click', function(e) {
+                  // Eğer başvuru butonuna tıklanmadıysa
+                  if (!e.target.closest('.team-apply-btn')) {
+                      // Kartı genişlet/daralt
+                      this.classList.toggle('expanded');
+                      
+                      // Yumuşak scroll efekti
+                      this.scrollIntoView({
+                          behavior: 'smooth',
+                          block: 'center'
+                      });
+                  }
+              });
+
+              // Başvuru butonu etkileşimleri
+              if (applyBtn) {
+                  // Mouse events
+                  applyBtn.addEventListener('mouseenter', function() {
+                      this.style.transform = 'translateY(-2px) scale(1.02)';
+                      this.style.filter = 'brightness(1.1)';
+                  });
+
+                  applyBtn.addEventListener('mouseleave', function() {
+                      this.style.transform = 'translateY(0) scale(1)';
+                      this.style.filter = 'brightness(1)';
+                  });
+
+                  // Click event - önemli: sadece animasyon, href'e müdahale etme
+                  applyBtn.addEventListener('click', function(e) {
+                      const teamName = this.closest('.team-card').querySelector('.team-name').textContent;
+                      
+                      // Başvuru bildirimi
+                      showNotification(`${teamName} başvuru formuna yönlendiriliyorsun! 🚀`, 'success');
+                      
+                      // Button animasyonu
+                      this.style.transform = 'scale(0.95)';
+                      setTimeout(() => {
+                          this.style.transform = 'translateY(-2px) scale(1.02)';
+                      }, 150);
+                      
+                      // Normal link davranışını engellemiyoruz - href çalışacak
+                  });
+              }
+          });
+      }
+
+      // Button efektleri
+      function initButtonEffects() {
+          // Hero CTA button efektleri
+          const heroBtn = document.querySelector('.hero-cta-btn');
+          if (heroBtn) {
+              heroBtn.addEventListener('mouseenter', function() {
+                  const particles = this.querySelector('.btn-particles');
+                  if (particles) {
+                      particles.style.opacity = '1';
+                  }
+              });
+
+              heroBtn.addEventListener('mouseleave', function() {
+                  const particles = this.querySelector('.btn-particles');
+                  if (particles) {
+                      particles.style.opacity = '0';
+                  }
+              });
+          }
+
+          // Apply button glow efektleri
+          const applyBtns = document.querySelectorAll('.team-apply-btn');
+          applyBtns.forEach(btn => {
+              btn.addEventListener('mouseenter', function() {
+                  const glow = this.querySelector('.btn-glow');
+                  if (glow) {
+                      glow.style.left = '0%';
+                      glow.style.opacity = '1';
+                  }
+              });
+
+              btn.addEventListener('mouseleave', function() {
+                  const glow = this.querySelector('.btn-glow');
+                  if (glow) {
+                      setTimeout(() => {
+                          glow.style.left = '-100%';
+                          glow.style.opacity = '0';
+                      }, 200);
+                  }
+              });
+          });
+
+          // Skill tag etkileşimleri
+          const skillTags = document.querySelectorAll('.skill-tag');
+          skillTags.forEach(tag => {
+              tag.addEventListener('mouseenter', function() {
+                  this.style.transform = 'scale(1.1) translateY(-2px)';
+                  this.style.filter = 'brightness(1.2)';
+              });
+
+              tag.addEventListener('mouseleave', function() {
+                  this.style.transform = 'scale(1) translateY(0)';
+                  this.style.filter = 'brightness(1)';
+              });
+          });
+      }
+
+      // Mobil optimizasyonları
+      function initMobileOptimizations() {
+          const isMobile = window.innerWidth <= 768;
+          const isTouch = 'ontouchstart' in window;
+
+          if (isMobile || isTouch) {
+              // Touch feedback için kartlara özel davranış ekle
+              const cards = document.querySelectorAll('.team-card, .skill-item, .benefit-card');
+              
+              cards.forEach(card => {
+                  card.addEventListener('touchstart', function() {
+                      this.style.transform = 'scale(0.98)';
+                      this.style.transition = 'transform 0.1s ease';
+                  }, { passive: true });
+
+                  card.addEventListener('touchend', function() {
+                      this.style.transform = 'scale(1)';
+                      setTimeout(() => {
+                          this.style.transition = '';
+                      }, 100);
+                  }, { passive: true });
+              });
+
+              // Mobile için scroll performansını optimize et
+              let ticking = false;
+              
+              function optimizeScrollPerformance() {
+                  if (!ticking) {
+                      requestAnimationFrame(() => {
+                          // Scroll-based animasyonları throttle et
+                          ticking = false;
+                      });
+                      ticking = true;
+                  }
+              }
+
+              window.addEventListener('scroll', optimizeScrollPerformance, { passive: true });
+          }
+
+          // Viewport yeniden boyutlandırma için responsive handling
+          let resizeTimeout;
+          window.addEventListener('resize', function() {
+              clearTimeout(resizeTimeout);
+              resizeTimeout = setTimeout(() => {
+                  // Layout yeniden hesaplama
+                  const newIsMobile = window.innerWidth <= 768;
+                  if (newIsMobile !== isMobile) {
+                      location.reload(); // Basit yaklaşım - production'da daha sophisticated olmalı
+                  }
+              }, 250);
+          });
+      }
+
+      // Accessibility features
+      function initAccessibility() {
+          // Keyboard navigation
+          const focusableElements = document.querySelectorAll(
+              'button, a, .team-card, .skill-item, .benefit-card'
+          );
+
+          focusableElements.forEach((element, index) => {
+              // Focus görünürlüğü
+              element.addEventListener('focus', function() {
+                  this.style.outline = '3px solid var(--color-primary)';
+                  this.style.outlineOffset = '2px';
+                  this.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'nearest'
+                  });
+              });
+
+              element.addEventListener('blur', function() {
+                  this.style.outline = 'none';
+              });
+
+              // Keyboard navigation
+              element.addEventListener('keydown', function(e) {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                      if (this.tagName === 'A' || this.tagName === 'BUTTON') {
+                          // Let default behavior handle
+                          return;
+                      }
+                      
+                      // Handle card activation
+                      e.preventDefault();
+                      const applyBtn = this.querySelector('.team-apply-btn');
+                      if (applyBtn) {
+                          applyBtn.click();
+                      } else {
+                          this.click();
+                      }
+                  }
+
+                  // Arrow key navigation
+                  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                      e.preventDefault();
+                      const direction = e.key === 'ArrowDown' ? 1 : -1;
+                      const nextIndex = (index + direction + focusableElements.length) % focusableElements.length;
+                      focusableElements[nextIndex].focus();
+                  }
+              });
+          });
+
+          // Screen reader announcements
+          const announceElement = document.createElement('div');
+          announceElement.setAttribute('aria-live', 'polite');
+          announceElement.setAttribute('aria-atomic', 'true');
+          announceElement.className = 'sr-only';
+          document.body.appendChild(announceElement);
+
+          // Function to announce to screen readers
+          window.announceToScreenReader = function(message) {
+              announceElement.textContent = message;
+              setTimeout(() => {
+                  announceElement.textContent = '';
+              }, 1000);
+          };
+      }
+
+      // Bildirim sistemi
+      function showNotification(message, type = 'info') {
+          const notification = document.createElement('div');
+          const icons = {
+              success: '✅',
+              error: '❌',
+              warning: '⚠️',
+              info: 'ℹ️'
+          };
+
+          notification.style.cssText = `
+              position: fixed;
+              top: 30px;
+              right: 30px;
+              background: var(--color-white);
+              color: var(--color-text);
+              padding: 16px 24px;
+              border-radius: 12px;
+              z-index: 10000;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+              opacity: 0;
+              transform: translateX(400px) scale(0.8);
+              transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              font-size: 14px;
+              font-weight: 500;
+              max-width: 350px;
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              border: 1px solid var(--color-card-border);
+          `;
+
+          notification.innerHTML = `
+              <span style="font-size: 18px;">${icons[type]}</span>
+              <span>${message}</span>
+          `;
+
+          document.body.appendChild(notification);
+
+          // Animate in
+          setTimeout(() => {
+              notification.style.opacity = '1';
+              notification.style.transform = 'translateX(0) scale(1)';
+          }, 100);
+
+          // Animate out and remove
+          setTimeout(() => {
+              notification.style.opacity = '0';
+              notification.style.transform = 'translateX(400px) scale(0.8)';
+              setTimeout(() => {
+                  if (notification.parentNode) {
+                      notification.parentNode.removeChild(notification);
+                  }
+              }, 400);
+          }, 3000);
+      }
+
+      // Performance monitoring
+      function initPerformanceMonitoring() {
+          // Page load performance
+          window.addEventListener('load', function() {
+              setTimeout(() => {
+                  const perfData = performance.timing;
+                  const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                  console.log(`📊 Sayfa yükleme süresi: ${loadTime}ms`);
+                  
+                  if (loadTime > 3000) {
+                      console.warn('⚠️ Sayfa yükleme süresi yavaş, optimizasyon gerekli');
+                  }
+              }, 0);
+          });
+
+          // Memory usage monitoring (if available)
+          if (performance.memory) {
+              setInterval(() => {
+                  const memory = performance.memory;
+                  const usedPercent = (memory.usedJSHeapSize / memory.totalJSHeapSize) * 100;
+                  
+                  if (usedPercent > 90) {
+                      console.warn('⚠️ Yüksek memory kullanımı tespit edildi');
+                  }
+              }, 30000); // Her 30 saniyede kontrol et
+          }
+      }
+
+      // Initialize performance monitoring
+      initPerformanceMonitoring();
+
+      // Easter egg - Konami Code
+      (function() {
+          const konamiCode = [
+              'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+              'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
+              'KeyB', 'KeyA'
+          ];
+          let userInput = [];
+
+          document.addEventListener('keydown', function(e) {
+              userInput.push(e.code);
+              
+              if (userInput.length > konamiCode.length) {
+                  userInput.shift();
+              }
+              
+              if (userInput.join(',') === konamiCode.join(',')) {
+                  showNotification('🎉 Konami Code aktivated! BANÜ YBST Easter Egg bulundu!', 'success');
+                  
+                  // Özel efekt
+                  document.body.style.animation = 'rainbow 2s ease-in-out';
+                  setTimeout(() => {
+                      document.body.style.animation = '';
+                  }, 2000);
+              }
+          });
+      })();
+
+      // CSS animasyonlarını dinamik olarak ekle
+      const additionalStyles = `
+          @keyframes rainbow {
+              0%, 100% { filter: hue-rotate(0deg); }
+              50% { filter: hue-rotate(180deg); }
+          }
+          
+          .expanded {
+              transform: scale(1.02) !important;
+              z-index: 10 !important;
+          }
+          
+          @media (prefers-reduced-motion: reduce) {
+              .fade-in, .slide-up {
+                  animation: none !important;
+              }
+          }
+      `;
+
+      const styleSheet = document.createElement('style');
+      styleSheet.textContent = additionalStyles;
+      document.head.appendChild(styleSheet);
+
+      // Console mesajları
+      console.log('%c🎯 BANÜ YBST Ekip Üyesi Alım Portalı', 'color: #0891b2; font-size: 16px; font-weight: bold;');
+      console.log('%cGeliştirici: BANÜ YBST Yazılım Ekibi', 'color: #64748b; font-size: 12px;');
+      console.log('%cBANÜ\'nün en aktif topluluğuna hoşgeldiniz! 🚀', 'color: #f97316; font-size: 14px; font-weight: bold;');
+
+      // Debug bilgileri
+      console.log('📊 Uygulama İstatistikleri:');
+      console.log('- Takım kartları:', document.querySelectorAll('.team-card').length);
+      console.log('- Başvuru butonları:', document.querySelectorAll('.team-apply-btn').length);
+      console.log('- Beceri öğeleri:', document.querySelectorAll('.skill-item').length);
+      console.log('- Fayda kartları:', document.querySelectorAll('.benefit-card').length);
+      console.log('- İstatistik kartları:', document.querySelectorAll('.stat-card').length);
+
+      // Başvuru butonlarının link kontrolü
+      document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(() => {
+              document.querySelectorAll('.team-apply-btn').forEach((btn, i) => {
+                  const href = btn.getAttribute('href');
+                  console.log(`Başvuru Bağlantısı ${i + 1}: ${href}`);
+                  
+                  if (!href || (!href.includes('forms.gle') && !href.includes('mailto:'))) {
+                      console.error(`❌ Başvuru bağlantısı ${i + 1} eksik veya hatalı!`);
+                  } else {
+                      console.log(`✅ Başvuru bağlantısı ${i + 1} doğru`);
+                  }
+              });
+          }, 1000);
+      });
+
+      // Service Worker desteği (PWA için)
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+              console.log('💡 Service Worker desteği mevcut - PWA özellikleri için hazır');
+          });
+      }
+
+      // Final initialization message
+      setTimeout(() => {
+          showNotification('BANÜ\'nün en aktif topluluğuna hoş geldin! Ekiplerimizi keşfetmeye başlayabilirsin 🎯', 'success');
+      }, 1500);
+    </script>
+</body>
+</html>
